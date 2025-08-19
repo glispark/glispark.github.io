@@ -1,70 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background: repeating-linear-gradient(45deg, #000, #111 10px, #000 20px);
-    font-family: 'Comic Sans MS', monospace;
-    color: #f0f;
-    overflow: hidden;
-    cursor: none;
-  }
-  
-  #eye {
-    width: 30vmin;
-    height: 30vmin;
-    background: radial-gradient(circle, #ff0000 0%, transparent 70%);
-    border-radius: 50%;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(666deg);
-    animation: pulse 1.5s infinite;
-    z-index: 999;
-  }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1) rotate(666deg); }
-    50% { transform: scale(1.2) rotate(720deg); }
-  }
-  
-  .container {
-    position: absolute;
-    top: 66%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0.5turn);
-    text-align: center;
-  }
-  
-  #text {
-    font-size: 3.5vmin;
-    background: linear-gradient(90deg, #0ff, #f0f, #0f0, #f00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: blur(1px);
-    animation: glitch 0.3s infinite;
-  }
-  
-  @keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 1px); }
-    40% { transform: translate(3px, -1px); }
-    60% { transform: translate(-1px, 2px); }
-    80% { transform: translate(1px, -2px); }
-    100% { transform: translate(0); }
-  }
-  
-  button {
-    margin-top: 3vmin;
-    padding: 1em 3em;
-    font-size: 2em;
-    border: none;
-    background: transparent;
-    color: #fff;
-    border: 2px dashed #f0f;
-    animation: rotateButton 2s infinite alternate;
-  }
-  
-  @keyframes rotateButton {
-    0% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(720deg) scale(1.2); }
-  }
-  
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #110011, #000000, #110011);
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  animation: shake 0.3s infinite;
+  cursor: url('https://cur.cursors-4u.net/symbols/sym-7/sym642.cur'), auto;
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 2px); }
+  75% { transform: translate(2px, 1px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.hella-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-conic-gradient(#0ff 0deg 10deg, #f0f 10deg 20deg, #000 20deg 30deg);
+  animation: spin 20s linear infinite;
+  filter: blur(4px) brightness(0.8) saturate(5);
+  z-index: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.chaos-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff00ff;
+  text-align: center;
+  z-index: 999;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.4; }
+  70% { opacity: 0.8; }
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+}
+
+#textLine {
+  font-size: 1.2em;
+  margin-top: 1em;
+  color: #aaa;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+button {
+  margin-top: 2em;
+  padding: 1em 2em;
+  background: transparent;
+  border: 2px dashed #0ff;
+  color: #fff;
+  font-size: 1.2em;
+  transition: all 0.2s ease;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
