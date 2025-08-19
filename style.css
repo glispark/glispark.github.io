@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: repeating-linear-gradient(45deg, #000, #111 10px, #000 20px);
+    font-family: 'Comic Sans MS', monospace;
+    color: #f0f;
+    overflow: hidden;
+    cursor: none;
+  }
+  
+  #eye {
+    width: 30vmin;
+    height: 30vmin;
+    background: radial-gradient(circle, #ff0000 0%, transparent 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(666deg);
+    animation: pulse 1.5s infinite;
+    z-index: 999;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(666deg); }
+    50% { transform: scale(1.2) rotate(720deg); }
+  }
+  
+  .container {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0.5turn);
+    text-align: center;
+  }
+  
+  #text {
+    font-size: 3.5vmin;
+    background: linear-gradient(90deg, #0ff, #f0f, #0f0, #f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(1px);
+    animation: glitch 0.3s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(3px, -1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0); }
+  }
+  
+  button {
+    margin-top: 3vmin;
+    padding: 1em 3em;
+    font-size: 2em;
+    border: none;
+    background: transparent;
+    color: #fff;
+    border: 2px dashed #f0f;
+    animation: rotateButton 2s infinite alternate;
+  }
+  
+  @keyframes rotateButton {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(720deg) scale(1.2); }
+  }
+  
